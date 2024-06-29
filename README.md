@@ -125,3 +125,4 @@ This template serves as a foundational starting point and should be thoroughly r
 ---
 
 Embrace the power of VeBetterDAO's X-Apps template and transform your DApp development experience. Happy coding! 😄
+# super-fridge
