@@ -21,7 +21,7 @@ export class OpenAIHelper {
 
   public askChatGPTAboutImage = async ({ base64Image, maxTokens = 350, prompt }: { base64Image: string; prompt: string; maxTokens?: number }) =>
     this.openai.chat.completions.create({
-      model: 'gpt-3.5-turbo-instruct',
+      model: 'gpt-4o',
       max_tokens: maxTokens,
       messages: [
         {
