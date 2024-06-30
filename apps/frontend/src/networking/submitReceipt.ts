@@ -24,3 +24,19 @@ export const submitReceipt = async (
     throw error;
   } 
 };
+export const uploadFridge = async (
+  data: ReceiptData
+): Promise<Response> => {
+  try {
+    const response = await axios.post(
+      `${backendURL}/submitFridge`, 
+      data
+    );
+
+    // alert(JSON.parse(response.data));
+    return response.data;
+  } catch (error: unknown) {
+    console.error("Error posting data:", error);
+    throw error;
+  } 
+};

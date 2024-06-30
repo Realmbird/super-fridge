@@ -13,6 +13,6 @@ export class FridgeRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.post(`/submitFridge`, ValidationMiddleware(SubmitDto), this.submission.submitReceipt);
+    this.router.post(`/submitFridge`, ValidationMiddleware(SubmitDto), this.submission.uploadReciept);
   }
 }
