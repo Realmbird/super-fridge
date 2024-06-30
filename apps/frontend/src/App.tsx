@@ -7,7 +7,8 @@ import {
   Instructions,
   Navbar,
   SubmissionModal,
-  Ingredients
+  Ingredients, 
+  RecipePage
 } from "./components";
 import { lightTheme } from "./theme";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
@@ -42,6 +43,7 @@ function App() {
               <InfoCard />
               <Instructions />
               <Ingredients list = {["butter expiration (July/4/2024)", "egg expiration (July/4/2024)", "garlic expiration (July/4/2024)"]}/>
+              <RecipePage />
               <Dropzone />
             </Container>
           </Flex>
