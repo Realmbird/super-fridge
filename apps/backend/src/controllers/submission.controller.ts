@@ -27,7 +27,7 @@ export class SubmissionController {
       // Submission validation with smart contract
       await this.contracts.validateSubmission(submissionRequest);
 
-      const validationResult = await this.openai.validateImage(body.image); //open ai used here
+      const validationResult = await this.openai.validateImage(body.image); //open ai used here 
 
       if (validationResult == undefined || !('validityFactor' in (validationResult as object))) {
         throw new HttpException(500, 'Error validating image');
@@ -35,7 +35,7 @@ export class SubmissionController {
 
       const validityFactor = validationResult['validityFactor'];
 
-      if (validityFactor === 1) await this.contracts.registerSubmission(submissionRequest);
+      if (validityFactor === 1) await this.contracts.registerSubmission(submissionRequest); // block chain
 
       res.status(200).json({ validation: validationResult });
     } catch (error) {

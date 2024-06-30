@@ -24,9 +24,9 @@ export const InfoCard = () => {
             alignItems={"center"}
           >
             <HStack alignSelf={{ base: "center", md: "flex-start" }}>
-              <Image src="/logo.png" h={16} borderRadius={16} />
+              <Image src="/fridge.jpg" h={16} borderRadius={16} />
               <Text fontSize={24} fontWeight={800}>
-                EcoEarn
+                Super Fridge
               </Text>
             </HStack>
             <Flex

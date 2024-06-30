@@ -10,10 +10,7 @@ export class OpenaiService {
 
     const prompt = `
                     Analyze the image provided. The image MUST satisfy all of the following criteria:
-                        1. It must have as subject a receipt of purchase of at least one product.
-                        2. It must not be a screenshot.
-                        3. It must include the date of the purchase.
-                        4. It must include the name of the store where the purchase was made.
+                        1. It must have a cooked meal
                     Please respond using a JSON object without comments and do not add any other descriptions and comments:
                     {
                     'validityFactor': number, // 0-1, 1 if it satisfies all the criteria, 0 otherwise
@@ -21,13 +18,38 @@ export class OpenaiService {
                     }
                     `;
 
-    const gptResponse = await openAIHelper.askChatGPTAboutImage({
-      base64Image: image,
-      prompt,
-    });
+    // const gptResponse = await openAIHelper.askChatGPTAboutImage({
+    //   base64Image: image,
+    //   prompt,
+    // });
 
-    const responseJSONStr = openAIHelper.getResponseJSONString(gptResponse);
-
-    return openAIHelper.parseChatGPTJSONString(responseJSONStr);
+    // const responseJSONStr = openAIHelper.getResponseJSONString(gptResponse);
+    return {
+      'validityFactor': 1,
+      'descriptionOfAnalysis': 'The image is a receipt from Walmart with the date of purchase, it contains the names and quantities of the purchased products.',
+      'ingredients': [
+      {
+      'name': 'Apples',
+      'quantity': 5,
+      'expiration_date': '07/03/2024'
+      },
+      {
+      'name': 'Grapes',
+      'quantity': 5,
+      'expiration_date': '07/03/2024'
+      },
+      {
+      'name': 'Butter',
+      'quantity': 2,
+      'expiration_date': '07/03/2024'
+      },
+      {
+      'name': 'Bread',
+      'quantity': 3,
+      'expiration_date': '07/01/2024'
+      }
+      ]
+      }
+    // return openAIHelper.parseChatGPTJSONString(responseJSONStr);
   }
 }
